@@ -1,20 +1,90 @@
 
 
 # AlphaZero: Dots and Boxes
-**AlphaZero** implementation for the Pen and Paper game **Dots and Boxes** (Project Deep Reinforcement Learning, Universität Ulm, WiSe 22/23.). 
+**AlphaZero** implementation for the Pen and Paper game **Dots and Boxes** (Project Deep Reinforcement Learning @ Universität Ulm). 
+
+Have a look at the full report [here](0_report.pdf), providing detailed information about the AlphaZero algorithm, how it is adapted for Dots and Boxes, and visualizations of training progress including loss and results evolution against other game-playing AI approaches.
 
 ## Abstract
 The introduction of AlphaZero in 2017 was a milestone in the field of game-playing artificial intelligence. Until then, development of the strongest programs was based on game-specific search techniques, adaptations, and handcrafted evaluations created by human experts. In contrast, AlphaZero learns and masters board games by reinforcement learning from self-play without human guidance beyond game rules, reaching superhuman performance for complex board games such as chess, shogi and Go. In this work, we apply the AlphaZero algorithm to the game of Dots and Boxes. In this context, we analyze the training process of AlphaZero and evaluate its performance against other artificial intelligence based game-playing programs for small board sizes. Further, we discuss the challenges and requirements involved in successfully applying AlphaZero to other board games. While showing its forward-looking capabilities, AlphaZero consistently beats its opponents in our experiments.
 
-TODO link to report
+
+
+
 
 ## Features
-TODO
+
+* [x] Train (and play against) AlphaZero for the game of Dots and Boxes
+* [x] Providing detailed information during training
+```
+#################### Iteration 21/1000 ####################
+------------ Self-Play using MCTS ------------
+100%|██████████| 500/500 [1:33:38<00:00, 11.24s/it]
+500 games of Self-Play resulted in 19,423 new training examples (without augmentations).
+Loading training examples .. took 75.63s
+Saving training examples .. took 434.59s
+
+---------- Neural Network Training -----------
+Encoding train examples for given model ..
+Batches are sampled from 1,549,200 training examples (incl. augmentations) from the 5,000/5,000 most recent games.
+Preparing batches ..
+100%|██████████| 5600/5600 [00:15<00:00, 370.57it/s]
+Updating model ..
+100%|██████████| 5600/5600 [07:29<00:00, 12.47it/s]
+Evaluating model ..
+100%|██████████| 5600/5600 [02:11<00:00, 42.53it/s]
+Policy Loss: 3.03951 (avg.)
+Value Loss: 0.33518 (avg.)
+Loss: 3.37469 (avg.)
+
+-------------- Model Comparison --------------
+Comparing UpdatedModel:Draw:RandomPlayer ...
+100%|██████████| 50/50 [04:24<00:00,  5.29s/it]
+100%|██████████| 50/50 [04:41<00:00,  5.63s/it]
+Result: 50:0:0 (starting)
+Result: 50:0:0 (second)
+Result: 100:0:0 (total)
+
+...
+
+Comparing UpdatedModel:Draw:AlphaBetaPlayer(Depth=3) ...
+100%|██████████| 50/50 [05:50<00:00,  7.01s/it]
+100%|██████████| 50/50 [06:03<00:00,  7.26s/it]
+Result: 46:3:1 (starting)
+Result: 28:9:13 (second)
+Result: 74:12:14 (total)
+
+Total time in training loop: 75695.07s
+###########################################################
+```
+
+* [x] Play Dots and Boxes versus AlphaZero (or other opponents) in terminal 
+
+TODO img
+
+* [x] Visualization of loss evolution
+
+TODO img
+
+* [x] Visualization of results evolution against other game-playing AI approaches
+
+TODO img
+
+* [x] Multi-thread support for self-play
+* [x] GPU support for training and self-play
+* [x] Extensively documented code
+* [x] Model weights, statistics and training data automatically saved at checkpoints
+* [x] Single and two player mode
 
 
-## TODO
-- view games between different opponents
-- 
+## Improvements (To-Do)
+* [ ] Print AlphaZero search probabilities for moves when playing in terminal
+* [ ] Modify play.py to view games of AlphaZero(s) (or different AIs in general) playing against each other
+* [ ] Multi GPU support for the training and the selfplay
+* [ ] Batch MCTS
+
+
+
 
 ## Installation
 ```bash
