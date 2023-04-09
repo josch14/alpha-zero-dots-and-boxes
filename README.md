@@ -60,22 +60,31 @@ Total time in training loop: 75695.07s
 
 * [x] Play Dots and Boxes versus AlphaZero (or other opponents) in terminal 
 
-TODO img
+<p align="center">
+  <img src="./img/screenshot.png" width="400">
+</p>
 
 * [x] Visualization of loss evolution
 
-TODO img
+<p align="center">
+  <img src="./img/loss_evolution_3x3.png" height="280">
+</p>
 
 * [x] Visualization of results evolution against other game-playing AI approaches
 
-TODO img
+<p align="center">
+  <img src="./img/iteration_game_results_3x3.png" height="300">
+</p>
 
 * [x] Multi-thread support for self-play
 * [x] GPU support for training and self-play
 * [x] Extensively documented code
 * [x] Model weights, statistics and training data automatically saved at checkpoints
-* [x] Single and two player mode
+* [x] DualRes support: position encoding into feature planes
 
+<p align="center">
+  <img src="./img/feature_planes.png" width="500">
+</p>
 
 ## Improvements (To-Do)
 * [ ] Print AlphaZero search probabilities for moves when playing in terminal
@@ -147,7 +156,7 @@ python play.py --size 3 --opponent alpha_beta --depth 3
 ```
 
 
-## Plots
+## Visualizations
 You may visualize the training progress by plotting the loss evolution and results evolution.
 ```bash
 python plot_loss.py -d '.\logs\alpha_zero_3x3' -s 3
