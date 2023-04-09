@@ -9,15 +9,6 @@ from src.model.feed_forward import AZFeedForward
 from src.players.neural_network import NeuralNetworkPlayer
 
 
-"""
-Example call: 
-python play_console.py --size 3 --opponent person
-python play_console.py --size 3 --opponent random
-python play_console.py --size 3 --opponent alpha_beta --depth 3
-python play_console.py --size 2 --opponent alpha_zero --checkpoint alpha_zero_2x2
-python play_console.py --size 3 --opponent alpha_zero --checkpoint alpha_zero_3x3
-python play_console.py --size 4 --opponent alpha_zero --checkpoint alpha_zero_4x4
-"""
 parser = argparse.ArgumentParser()
 parser.add_argument('-s', '--size', type=int, default=2,
                     help='Size of the Dots-and-Boxes game (in number of boxes per row and column).')
@@ -30,13 +21,14 @@ parser.add_argument('-d', '--depth', type=int, default=3,
 args = parser.parse_args()
 
 
-
 def cls(): os.system("cls" if os.name == "nt" else "clear")
 
 
 def main(size: int, opponent: AIPlayer):
     cls()
-    game = DotsAndBoxesPrinter(size)
+
+    opponent_name = "Opponent" if opponent is None else opponent.name
+    game = DotsAndBoxesPrinter(size, opponent_name)
 
     print(game.state_string())
     print(game.board_string())
@@ -66,7 +58,7 @@ def main(size: int, opponent: AIPlayer):
         game.execute_move(move)
 
         # print new game state
-        # cls()
+        cls()
         if not last_move_by_player:
             print("Computation time of opponent for previous move {0:.2f}s".format(stopped_time))
         else:

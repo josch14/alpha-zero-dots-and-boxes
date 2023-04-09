@@ -7,18 +7,15 @@ import argparse
 from trainer import Trainer
 from src import Checkpoint
 
+
 RESOURCES_FOLDER = "resources/"
 LOGS_FOLDER = "logs/"
 
 
-"""
-Example call:
-python train.py --n_workers 4 --training_device cpu
-"""
 parser = argparse.ArgumentParser()
 parser.add_argument('-cp', '--checkpoint', type=str, default=None,
                     help='Model checkpoint (i.e., name of folder which saved data) to start training from.')
-parser.add_argument('-cf', '--config', type=str, default="config_size_2_dual_res",
+parser.add_argument('-cf', '--config', type=str, required=True,
                     help='name of config which should be used for training (only relevant for new training)')
 parser.add_argument('-w', '--n_workers', type=int, default=1,
                     help='Number of threads during self-play. Each thread performs games of self-play.')

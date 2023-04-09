@@ -3,15 +3,9 @@ import matplotlib.pyplot as plt
 import argparse
 import numpy as np
 
-"""
-Example call:
-python .\plot_loss.py -f .\logs\alpha_zero_2x2\ -s 2 -y 2.7
-python .\plot_loss.py -f .\logs\alpha_zero_3x3\ -s 3 -y 4.0
-python .\plot_loss.py -f .\logs\alpha_zero_4x4\ -s 4 --y_max 4.5
-"""
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--folder', type=str, required=True,
+parser.add_argument('-d', '--directory', type=str, required=True,
                     help='Folder containing loss statistics of AlphaZero training.')
 parser.add_argument('-s', '--game_size', type=int, required=True,
                     help='Size of the Dots and Boxes game for which the model was trained.')
@@ -138,8 +132,8 @@ def plot(data_train_loss: dict,
 
 if __name__ == '__main__':
 
-    filename_train_loss = args.folder + './train_loss.json'
-    filename_iteration_loss = args.folder + './iteration_loss.json'
+    filename_train_loss = args.directory + './train_loss.json'
+    filename_iteration_loss = args.directory + './iteration_loss.json'
 
     with open(filename_train_loss) as f:
         data_train_loss = json.load(f)

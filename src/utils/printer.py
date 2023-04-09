@@ -15,8 +15,9 @@ class Color:
 
 class DotsAndBoxesPrinter(DotsAndBoxesGame):
 
-    def __init__(self, size):
+    def __init__(self, size, opponent_name):
         super().__init__(size=size)
+        self.opponent_name = opponent_name
 
     """
     Add methods to the DotsAndBoxes game class the enable you to play the
@@ -28,7 +29,7 @@ class DotsAndBoxesPrinter(DotsAndBoxesGame):
         s = "Score: (" + \
             colored("You", Color.PLAYER_1) + \
             f") {boxes_player_1}:{boxes_player_2} (" + \
-            colored("Opponent", Color.PLAYER_2) + ")"
+            colored(self.opponent_name, Color.PLAYER_2) + ")"
         return s
 
 

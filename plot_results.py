@@ -3,16 +3,9 @@ import matplotlib.pyplot as plt
 import argparse
 
 
-"""
-Example call:
-python .\plot_results.py -f '.\logs\alpha_zero_2x2' -s 2
-python .\plot_results.py -f '.\logs\alpha_zero_3x3' -s 3
-python .\plot_results.py -f '.\logs\alpha_zero_4x4' -s 4
-"""
-
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--folder', type=str, required=True,
-                    help='Folder containing results of AlphaZero training.')
+parser.add_argument('-d', '--directory', type=str, required=True,
+                    help='Directory containing results of AlphaZero training.')
 parser.add_argument('-s', '--game_size', type=int, required=True,
                     help='Size of the Dots and Boxes game for which the model was trained.')
 parser.add_argument('-n', '--n_iterations', type=int, default=None,
@@ -99,7 +92,7 @@ def calculate_win_percents(results):
 
 if __name__ == '__main__':
 
-    filename = args.folder + './results.json'
+    filename = args.directory + './results.json'
     with open(filename) as f:
         data = json.load(f)
 
