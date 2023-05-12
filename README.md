@@ -54,19 +54,19 @@ Total time in training loop: 75695.07s
 * [x] Play Dots and Boxes versus AlphaZero (or other opponents) in terminal 
 
 <p align="center">
-  <img src="./img/screenshot.png" height="280">
+  <img src="./img/screenshot.png" height="280" width="387">
 </p>
 
 * [x] Visualization of loss evolution
 
 <p align="center">
-  <img src="./img/loss_evolution_3x3.png" height="280">
+  <img src="./img/loss_evolution_3x3.png" height="280" width="434">
 </p>
 
 * [x] Visualization of results evolution against other game-playing AI approaches
 
 <p align="center">
-  <img src="./img/iteration_game_results_3x3.png" height="280">
+  <img src="./img/iteration_game_results_3x3.png" height="280" width="865">
 </p>
 
 * [x] Multi-thread support for self-play
@@ -76,7 +76,7 @@ Total time in training loop: 75695.07s
 * [x] DualRes support: position encoding into feature planes
 
 <p align="center">
-  <img src="./img/feature_planes.png" height="280">
+  <img src="./img/feature_planes.png" height="280" width="409">
 </p>
 
 ## Improvements (To-Do)
