@@ -3,7 +3,7 @@
 # AlphaZero: Dots and Boxes
 **AlphaZero** implementation for the Pen and Paper game **Dots and Boxes** (Project Deep Reinforcement Learning @ Universität Ulm). 
 
-Have a look at the full report [here](0_report.pdf), providing detailed information about the AlphaZero algorithm, how it is adapted for Dots and Boxes, and visualizations of training progress including loss and results evolution against other game-playing AI approaches.
+Have a look at the full report [here](report.pdf), providing detailed information about the AlphaZero algorithm, how it is adapted for Dots and Boxes, and visualizations of training progress including loss and results evolution against other game-playing AI approaches.
 
 ## Abstract
 The introduction of AlphaZero in 2017 was a milestone in the field of game-playing artificial intelligence. Until then, development of the strongest programs was based on game-specific search techniques, adaptations, and handcrafted evaluations created by human experts. In contrast, AlphaZero learns and masters board games by reinforcement learning from self-play without human guidance beyond game rules, reaching superhuman performance for complex board games such as chess, shogi and Go. In this work, we apply the AlphaZero algorithm to the game of Dots and Boxes. In this context, we analyze the training process of AlphaZero and evaluate its performance against other artificial intelligence based game-playing programs for small board sizes. Further, we discuss the challenges and requirements involved in successfully applying AlphaZero to other board games. While showing its forward-looking capabilities, AlphaZero consistently beats its opponents in our experiments.
@@ -15,7 +15,7 @@ The introduction of AlphaZero in 2017 was a milestone in the field of game-playi
 ## Features
 
 * [x] Train (and play against) AlphaZero for the game of Dots and Boxes
-* [x] Providing detailed information during training
+* [x] Detailed information during training
 ```
 #################### Iteration 21/1000 ####################
 ------------ Self-Play using MCTS ------------
@@ -38,13 +38,6 @@ Value Loss: 0.33518 (avg.)
 Loss: 3.37469 (avg.)
 
 -------------- Model Comparison --------------
-Comparing UpdatedModel:Draw:RandomPlayer ...
-100%|██████████| 50/50 [04:24<00:00,  5.29s/it]
-100%|██████████| 50/50 [04:41<00:00,  5.63s/it]
-Result: 50:0:0 (starting)
-Result: 50:0:0 (second)
-Result: 100:0:0 (total)
-
 ...
 
 Comparing UpdatedModel:Draw:AlphaBetaPlayer(Depth=3) ...
@@ -61,19 +54,19 @@ Total time in training loop: 75695.07s
 * [x] Play Dots and Boxes versus AlphaZero (or other opponents) in terminal 
 
 <p align="center">
-  <img src="./img/screenshot.png" width="400">
+  <img src="./img/screenshot.png" width="350">
 </p>
 
 * [x] Visualization of loss evolution
 
 <p align="center">
-  <img src="./img/loss_evolution_3x3.png" height="280">
+  <img src="./img/loss_evolution_3x3.png" height="258" width="400">
 </p>
 
 * [x] Visualization of results evolution against other game-playing AI approaches
 
 <p align="center">
-  <img src="./img/iteration_game_results_3x3.png" height="300">
+  <img src="./img/iteration_game_results_3x3.png" height="258" width="800">
 </p>
 
 * [x] Multi-thread support for self-play
@@ -83,7 +76,7 @@ Total time in training loop: 75695.07s
 * [x] DualRes support: position encoding into feature planes
 
 <p align="center">
-  <img src="./img/feature_planes.png" width="500">
+  <img src="./img/feature_planes.png" width="350">
 </p>
 
 ## Improvements (To-Do)
