@@ -1,9 +1,9 @@
 
 
 # AlphaZero: Dots and Boxes
-**AlphaZero** implementation for the Pen and Paper game **Dots and Boxes** (Project Deep Reinforcement Learning @ Universität Ulm). 
+**AlphaZero** implementation for the Pen and Paper game **Dots and Boxes** (Project @ Universität Ulm). 
 
-Have a look at the full report [here](/report.pdf), providing detailed information about the AlphaZero algorithm, how it is adapted for Dots and Boxes, and visualizations of training progress including loss and results evolution against other game-playing AI approaches.
+Have a look at the full [report](/report.pdf), providing detailed information about the AlphaZero algorithm, how it is adapted for Dots and Boxes, and visualizations of training progress including loss and results evolution against other game-playing AI approaches.
 
 ## Abstract
 The introduction of AlphaZero in 2017 was a milestone in the field of game-playing artificial intelligence. Until then, development of the strongest programs was based on game-specific search techniques, adaptations, and handcrafted evaluations created by human experts. In contrast, AlphaZero learns and masters board games by reinforcement learning from self-play without human guidance beyond game rules, reaching superhuman performance for complex board games such as chess, shogi and Go. In this work, we apply the AlphaZero algorithm to the game of Dots and Boxes. In this context, we analyze the training process of AlphaZero and evaluate its performance against other artificial intelligence based game-playing programs for small board sizes. Further, we discuss the challenges and requirements involved in successfully applying AlphaZero to other board games. While showing its forward-looking capabilities, AlphaZero consistently beats its opponents in our experiments.
